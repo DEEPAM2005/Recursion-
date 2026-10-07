@@ -37,9 +37,17 @@ int fact(int x){
     return x * fact(x-1);
 }
 
+// reverse an array
+void reverseArray(vector<int>& arr, int l, int r){
+    if(l > r || l== r)return ;
+    swap(arr[l],arr[r]);
+    reverseArray(arr,l+1,r-1);
+}
+
 int main(){
-    string s = "Deepam";
-    // printNames(s);
-    int n = 4;
-    cout << fact(n);
+    vector<int> array = {1,2,3,4,5};
+    reverseArray(array,0,4);
+    for(int i=0; i<array.size(); i++){
+        cout << array[i] << " ";
+    }
 }
